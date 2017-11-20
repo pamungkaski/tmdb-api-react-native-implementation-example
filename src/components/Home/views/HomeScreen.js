@@ -78,14 +78,14 @@ class HomeScreen extends Component {
     const { navigation, film } = this.props
     const { list } = film
     return(
-      <View style={{flex:1}}>
-        <View style={{width: D.width, height: D.height * 0.03}} backgroundColor={"#0c6e7a"} />
-        <View style={{width: D.width, height: D.height * 0.11, flexDirection: 'row'}} backgroundColor={"#081c24"} >
-          <View style={{padding: 5}}>
-            <Image style={{ height: D.height * 0.09, width: D.height * 0.09}} resizeMode={'contain'} source={require('../../../assets/icon.png')}/>
+      <View style={{ flex:1 }}>
+        <View style={{ width: D.width, height: D.height * 0.03}} backgroundColor={"#0c6e7a" } />
+        <View style={{ width: D.width, height: D.height * 0.11, flexDirection: 'row'}} backgroundColor={"#081c24" } >
+          <View style={{ padding: 5 }}>
+            <Image style={{ height: D.height * 0.09, width: D.height * 0.09}} resizeMode={'contain'} source={require('../../../assets/icon.png' )}/>
           </View>
-          <View style={{padding: 5, justifyContent: 'center', alignItems:'center'}}>
-            <Text style={{color: 'white', fontSize: 16}}>
+          <View style={{ padding: 5, justifyContent: 'center', alignItems:'center' }}>
+            <Text style={{ color: 'white', fontSize: 16 }}>
               The Movie Database
             </Text>
           </View>
