@@ -22,7 +22,7 @@ export const HomeDetailFilm = (props) => {
         </View>
       </View>
       <View style={{backgroundColor: 'white', margin: 10, padding: 10, justifyContent: 'center', alignItems:'center'}} >
-        <Image style={{ width: D.width * 0.6 }} resizeMode={"contain"} source={{uri: `https://image.tmdb.org/t/p/w500${this.item.poster_view}`}}/>
+        <Image style={{ width: D.width * 0.6 }} resizeMode={"contain"} source={{uri: `https://image.tmdb.org/t/p/w500${item.poster_path}`}}/>
         <Text>
           {item.original_title} ({(item.release_date).split("-")[0]})
         </Text>
