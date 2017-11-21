@@ -2,7 +2,7 @@
  * Created by iampamungkas on 11/20/17.
  */
 import React from 'react'
-import { View, Dimensions, Image, Text } from 'react-native'
+import { View, Dimensions, Image, Text, ScrollView } from 'react-native'
 
 const D = Dimensions.get('window')
 
@@ -21,15 +21,17 @@ export const HomeDetailFilm = (props) => {
           </Text>
         </View>
       </View>
-      <View style={{backgroundColor: 'white', margin: 10, padding: 10, justifyContent: 'center', alignItems:'center'}} >
-        <Image style={{ width: D.width * 0.6 }} resizeMode={"contain"} source={{uri: `https://image.tmdb.org/t/p/w500${item.poster_path}`}}/>
-        <Text>
-          {item.original_title} ({(item.release_date).split("-")[0]})
-        </Text>
-        <Text>
-          {item.overview}
-        </Text>
-      </View>
+      <ScrollView>
+        <View style={{backgroundColor: 'white', margin: 10, padding: 10, justifyContent: 'center', alignItems:'center'}} >
+          <Image style={{ width: D.width * 0.6, height: D.width * 0.6 * 1.5 }} resizeMode={"contain"} source={{uri: `https://image.tmdb.org/t/p/w500${item.poster_path}`}}/>
+          <Text style={{ color: 'black', fontWeight: 'bold', fontFamily: 'Roboto', textAlign:'center' }}>
+            {item.original_title} ({(item.release_date).split("-")[0]})
+          </Text>
+          <Text>
+            {item.overview}
+          </Text>
+        </View>
+      </ScrollView>
     </View>
   )
 }
