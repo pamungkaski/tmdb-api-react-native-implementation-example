@@ -76,11 +76,11 @@ class HomeScreen extends Component {
   }
   render(){
     const { navigation, film } = this.props
-    const { list } = film
+    const { listPopular } = film
     return(
       <View style={{ flex:1 }}>
-        <View style={{ width: D.width, height: D.height * 0.03}} backgroundColor={"#0c6e7a" } />
-        <View style={{ width: D.width, height: D.height * 0.11, flexDirection: 'row'}} backgroundColor={"#081c24" } >
+        <View style={{ height: D.height * 0.03}} backgroundColor={"#0c6e7a" } />
+        <View style={{ height: D.height * 0.11, flexDirection: 'row'}} backgroundColor={"#081c24" } >
           <View style={{ padding: 5 }}>
             <Image style={{ height: D.height * 0.09, width: D.height * 0.09}} resizeMode={'contain'} source={require('../../../assets/icon.png' )}/>
           </View>
@@ -89,11 +89,18 @@ class HomeScreen extends Component {
               The Movie Database
             </Text>
           </View>
+          <TouchableOpacity onPress={() => navigation.navigate('HomeTopRated')}>
+            <View style={{ padding: 5, justifyContent: 'center', alignItems:'center' }}>
+              <Text style={{ color: 'white', fontSize: 16 }}>
+                Top Rated
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
         <FlatList
-          extraData={list}
+          extraData={listPopular}
           style={{ backgroundColor: '#dfdfdf' }}
-          data={list}
+          data={listPopular}
           keyExtractor={this._keyExtractor}
           renderItem={(item) => this._renderItem(item) }
           onEndReachedTresholf={0}

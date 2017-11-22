@@ -2,16 +2,23 @@
  * Created by iampamungkas on 11/20/17.
  */
 import React from 'react'
-import { View, Dimensions, Image, Text, ScrollView } from 'react-native'
+import { View, Dimensions, Image, Text, ScrollView, StyleSheet } from 'react-native'
 
 const D = Dimensions.get('window')
+
+const style = StyleSheet.create({
+  dalam: {
+    height: D.height * 0.11,
+    flexDirection: 'row'
+  },
+})
 
 export const HomeDetailFilm = (props) => {
   const { item } = props.navigation.state.params.item
   return(
     <View style={{flex:1, backgroundColor:'#f4f4f4'}}>
-      <View style={{width: D.width, height: D.height * 0.03}} backgroundColor={"#0c6e7a"} />
-      <View style={{width: D.width, height: D.height * 0.11, flexDirection: 'row'}} backgroundColor={"#081c24"} >
+      <View style={{height: D.height * 0.03}} backgroundColor={"#0c6e7a"} />
+      <View style={style.dalam} backgroundColor={"#081c24"} >
         <View style={{padding: 5}}>
           <Image style={{ height: D.height * 0.09, width: D.height * 0.09}} resizeMode={'contain'} source={require('../../../assets/icon.png')}/>
         </View>
